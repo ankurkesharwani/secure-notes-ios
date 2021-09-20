@@ -13,15 +13,15 @@ class Container {
         return AppTabBarCoordinatorImpl(presentationStyle: presentationStyle,
                                            presentatiopnContext: presentatiopnContext)
     }
-    
+
     static func getAppTabBarController() -> AppTabBarController {
         return AppTabBarControllerImpl()
     }
-    
+
     static func getNotesController() -> NotesController {
         return NotesControllerImpl()
     }
-    
+
     static func getPasswordsController() -> PasswordsController {
         return PasswordsControllerImpl()
     }

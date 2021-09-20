@@ -8,7 +8,7 @@
 import UIKit
 
 class AppTabBarControllerImpl: UITabBarController, AppTabBarController {
-    
+
     func addController(_ childController: ViewControllerRepresentable,
                        _ title: String,
                        _ image: UIImage?,

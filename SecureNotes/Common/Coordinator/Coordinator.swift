@@ -17,7 +17,7 @@ protocol Coordinator: AnyObject {
     var style: PresentationStyle { get }
     var controller: ViewControllerRepresentable? { get }
     var context: ViewControllerRepresentable? { get }
-    
+
     func execute()
     func startNavigation()
     func dismiss(_ completion: ((_ success: Bool) -> Void)?)
@@ -41,13 +41,12 @@ extension Coordinator {
             }
         }
     }
-    
+
     func dismiss(_ completion: ((_ success: Bool) -> Void)?) {
         switch style {
         case .windowRoot:
             // Cannot dismiss
             completion?(false)
-            break;
         case .push:
             // Todo: Figure out animation end to call the completion handler.
             controller?.asUIViewController().navigationController?.popViewController(animated: true)
@@ -58,4 +57,3 @@ extension Coordinator {
         }
     }
 }
-

@@ -9,13 +9,13 @@ class AppTabBarCoordinatorImpl: AppTabBarCoordinator {
     var style: PresentationStyle
     var context: ViewControllerRepresentable?
     weak var controller: ViewControllerRepresentable?
-    
+
     init(presentationStyle: PresentationStyle,
          presentatiopnContext: ViewControllerRepresentable?) {
         self.style = presentationStyle
         self.context = presentatiopnContext
     }
-    
+
     func execute() {
         let tabbarController = Container.getAppTabBarController()
         controller = tabbarController
