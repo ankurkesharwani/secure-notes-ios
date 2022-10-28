@@ -19,7 +19,10 @@ extension ViewControllerRepresentable where Self: UIViewController {
     }
 
     func push(_ controller: ViewControllerRepresentable, animated: Bool) {
-        self.navigationController?.pushViewController(controller.asUIViewController(), animated: animated)
+        self.navigationController?.pushViewController(
+            controller.asUIViewController(),
+            animated: animated
+        )
     }
 
     func present(_ controller: ViewControllerRepresentable, animated: Bool) {
