@@ -1,0 +1,21 @@
+name: Pull request CI checks
+
+on:
+  # Triggers the workflow when PR raised for release branch
+  pull_request:
+    types: [ opened, synchronize, reopened ]
+    branches:
+      - "*"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: "Run Danger"
+    steps:
+      - uses: actions/checkout@v1
+      - name: Danger
+        uses: danger/swift@3.13.0
+        with:
+            args: --failOnErrors --no-publish-check
+        env:
+          GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
